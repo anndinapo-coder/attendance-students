@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="notification-container"></div>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-user-check"></i> Student Attendance</h1>
+        </header>
+
+        <main>
+            <section id="stats-dashboard" class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Students</span>
+                        <span id="stat-total" class="stat-value">0</span>
+                    </div>
+                </div>
+                <div class="stat-card present">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Present</span>
+                        <span id="stat-present" class="stat-value">0</span>
+                    </div>
+                </div>
+                <div class="stat-card absent">
+                    <i class="fas fa-times-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Absent</span>
+                        <span id="stat-absent" class="stat-value">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="student-management">
+                <div class="section-header">
+                    <h2><i class="fas fa-plus-circle"></i> Add Student</h2>
+                </div>
+                <form id="student-form" class="form-grid">
+                    <div class="input-group">
+                        <label for="student-name">Full Name</label>
+                        <input type="text" id="student-name" placeholder="e.g. John Doe" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-id">Student ID</label>
+                        <input type="text" id="student-id" placeholder="e.g. STU001" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Student</button>
+                </form>
+                
+                <div class="section-header mt-2">
+                    <h3><i class="fas fa-list"></i> Students List</h3>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="student-search" placeholder="Search students...">
+                    </div>
+                </div>
+                <div id="students-list-container" class="table-scroll">
+                    <table id="students-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="students-list-body">
+                            <!-- Rows will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="attendance-section">
+                <h2>Mark Attendance</h2>
+                <div class="controls">
+                    <input type="date" id="attendance-date" value="">
+                    <button id="load-attendance" class="btn"><i class="fas fa-sync"></i> Load</button>
+                </div>
+                <table id="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendance-body">
+                        <!-- Rows will be added here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
